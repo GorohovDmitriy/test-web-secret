@@ -2,20 +2,17 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import styled from 'styled-components'
 import {AiOutlineShoppingCart} from 'react-icons/ai'
-import {Container} from '../Container/Container'
 
 const Navbar = () => {
 	return (
 		<Header>
-			<Container>
-				<Wrapper>
-					<Title>Getlens</Title>
-					<CartPrice>
-						<p>{0}</p>
-						<AiOutlineShoppingCart size='22px' />
-					</CartPrice>
-				</Wrapper>
-			</Container>
+			<Wrapper>
+				<Title>Getlens</Title>
+				<CartPrice>
+					<p>{0}</p>
+					<AiOutlineShoppingCart size='22px' />
+				</CartPrice>
+			</Wrapper>
 		</Header>
 	)
 }
@@ -23,6 +20,7 @@ const Navbar = () => {
 export default Navbar
 
 const Header = styled.header`
+	padding: 0 2rem;
 	border-bottom: 1px solid #ccc;
 `
 

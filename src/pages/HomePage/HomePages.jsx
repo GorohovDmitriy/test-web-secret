@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import ProductListing from '../../components/ProductListing/ProductListing'
 
 const HomePages = () => {
 	const [checked, setCheked] = React.useState(false)
@@ -24,7 +25,9 @@ const HomePages = () => {
 					</BrandWrapper>
 				</Checkbox>
 			</WrapperLeft>
-			<WrapperRight>right</WrapperRight>
+			<WrapperRight>
+				<ProductListing />
+			</WrapperRight>
 		</HomeWrapper>
 	)
 }
@@ -43,7 +46,6 @@ const HomeWrapper = styled.div`
 `
 
 const WrapperLeft = styled.section`
-	// background-color: #ccc;
 	width: 100%;
 
 	@media (min-width: 767px) {
@@ -52,7 +54,6 @@ const WrapperLeft = styled.section`
 `
 
 const WrapperRight = styled.section`
-	background-color: #eee;
 	width: 100%;
 `
 const TotalProduct = styled.p`
@@ -94,6 +95,7 @@ const InputMin = styled.input.attrs({
 	border-radius: 4px 0px 0px 4px;
 	padding: 10px 20px;
 	width: 100%;
+
 	height: 42px;
 `
 const InputMax = styled.input.attrs({
@@ -105,6 +107,7 @@ const InputMax = styled.input.attrs({
 	border-radius: 0px 4px 4px 0px;
 	height: 42px;
 	width: 100%;
+
 	padding: 10px 20px;
 `
 const Brand = styled.span`
@@ -129,6 +132,7 @@ const Canon = styled.input.attrs({type: 'checkbox'})`
 	border-radius: 4px;
 	margin-right: 9px;
 	width: 18px;
+	cursor: pointer;
 	height: 18px;
 
 	span {
@@ -146,6 +150,7 @@ const Nikon = styled.input.attrs({type: 'checkbox'})`
 	border-radius: 4px;
 	margin-right: 9px;
 	width: 18px;
+	cursor: pointer;
 	height: 18px;
 
 	span {

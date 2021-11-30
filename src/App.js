@@ -1,6 +1,5 @@
 import React from 'react'
 import { Route, Switch } from 'react-router';
-import Cart from './components/Cart/Cart';
 import Main from './components/Main/Main';
 import HomePages from './pages/HomePage/HomePages';
 
@@ -12,7 +11,6 @@ function App() {
 					<Route path='/' exact>
 						<HomePages />
 					</Route>
-					<Route path='/cart' exact component={Cart} />
 				</Switch>
 			</Main>
 

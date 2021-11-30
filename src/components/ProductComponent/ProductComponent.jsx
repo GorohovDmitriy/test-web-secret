@@ -6,11 +6,6 @@ import Loader from '../Loader/Loader'
 
 const ProductComponent = () => {
 	const products = useSelector((state) => state.allProducts.products)
-	const filters = useSelector((state) => state.allProducts.filters)
-
-	const [priceFilter, NewFilter, saleFilter, BrandFilter] = filters
-
-	console.log(BrandFilter)
 
 	return (
 		<Wrapper>

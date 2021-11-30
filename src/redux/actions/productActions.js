@@ -9,8 +9,6 @@ export const fetchProducts = () => async (dispatch) => {
 		}
 	})
 	dispatch({ type: FETCH_PRODUCTS, payload: response.data.products })
-	console.log(response.data);
-
 }
 
 

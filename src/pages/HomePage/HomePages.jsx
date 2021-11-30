@@ -48,15 +48,15 @@ const HomePages = () => {
 					<InputMin value={minValue} onChange={(e) => setMinValue(e.target.value)} />
 					<InputMax value={maxValue} onChange={(e) => setMaxValue(e.target.value)} />
 				</InputContainer>
-				<Button onClick={() => getSortPrice(minValue, maxValue)}>Показать товары</Button>
+				<Button onClick={() => getSortPrice(minValue, maxValue)}>Показать товар</Button>
 				<Brand>Бренд</Brand>
 				<Checkbox>
 					<BrandWrapper>
-						<Canon value={checkedCanon} onChange={getCanonProducts()} />
+						<Canon value={checkedCanon} onChange={getCanonProducts} />
 						<span>Canon</span>
 					</BrandWrapper>
 					<BrandWrapper>
-						<Nikon value={checkedNikon} onChange={getNikonProduct()} />
+						<Nikon value={checkedNikon} onChange={getNikonProduct} />
 						<span>Nikon</span>
 					</BrandWrapper>
 				</Checkbox>

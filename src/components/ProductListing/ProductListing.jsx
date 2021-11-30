@@ -1,5 +1,4 @@
 import React from 'react'
-// import styled from 'styled-components'
 import {fetchProducts} from '../../redux/actions/productActions'
 import {useDispatch} from 'react-redux'
 import ProductComponent from '../ProductComponent/ProductComponent'

@@ -3,5 +3,5 @@ import { productsReducer } from './productReducers'
 
 
 export const reducers = combineReducers({
-	allProducts: productsReducer
+	allProducts: productsReducer,
 })

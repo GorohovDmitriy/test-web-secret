@@ -2,21 +2,32 @@ import React from 'react'
 import styled from 'styled-components'
 import {MdOutlineFavoriteBorder} from 'react-icons/md'
 import {useSelector} from 'react-redux'
+import Loader from '../Loader/Loader'
 
 const ProductComponent = () => {
 	const products = useSelector((state) => state.allProducts.products)
+	const filters = useSelector((state) => state.allProducts.filters)
 
-	console.log(products)
+	const [priceFilter, NewFilter, saleFilter, BrandFilter] = filters
+
+	console.log(BrandFilter)
 
 	return (
 		<Wrapper>
 			{products.length === 0
-				? 'Loading...'
+				? Array(8)
+						.fill(0)
+						.map((_, index) => <Loader key={index} />)
 				: products.map((item) => {
 						const {id, title, price, is_new, image} = item
 						return (
 							<Container key={id}>
-								<Image src={image.mobile.x1} alt={title} />
+								{is_new ? (
+									<NewImage>
+										<span>Новинка</span>
+									</NewImage>
+								) : null}
+								<Image src={image.desktop.webp_x2} alt={title} />
 								<Content>
 									<Title>{title}</Title>
 									<ContentPrice>
@@ -60,12 +71,40 @@ const Container = styled.div`
 
 	@media (min-width: 765px) {
 		display: flex;
+		position: relative;
 		flex-direction: row;
 		flex-wrap: wrap;
 		background: #ffffff;
 		border: 1px solid #e6e6e6;
 		box-sizing: border-box;
 		border-radius: 4px;
+	}
+`
+const NewImage = styled.p`
+	display: none;
+
+	@media (min-width: 765px) {
+		display: block;
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		z-index: 1;
+		padding-left: 10px;
+		padding-right: 10px;
+		padding-top: 5px;
+		padding-bottom: 10px;
+		background: #44c477;
+		border-radius: 26px;
+
+		span {
+			font-style: normal;
+			font-weight: bold;
+			font-size: 10px;
+			line-height: 140%;
+			letter-spacing: 0.05em;
+			text-transform: uppercase;
+			color: #ffffff;
+		}
 	}
 `
 const Image = styled.img`
@@ -164,6 +203,7 @@ const Button = styled.button`
 `
 const Favorite = styled.div`
 	margin-right: 16px;
+	cursor: pointer;
 `
 const Text = styled.p`
 	font-style: normal;

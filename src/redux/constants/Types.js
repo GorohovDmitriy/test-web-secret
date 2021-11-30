@@ -1,2 +1,4 @@
 export const FETCH_PRODUCTS = 'FETCH_PRODUCTS'
-
+export const SORT_PRODUCT_PRICE = 'SORT_PRODUCT_PRICE'
+export const SORT_CANON = 'SORT_CANON'
+export const SORT_NIKON = 'SORT_NIKON'
